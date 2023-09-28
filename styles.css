@@ -1,0 +1,94 @@
+body{
+    font-family: 'Manrope', sans-serif;
+}
+
+/* typography
+================================================
+*/
+.paragraph-container h2{
+    font-size: 1.5rem;
+    color: hsl(217, 19%, 35%);
+    font-weight: 700;
+}
+.paragraph-container p{
+    font-size: 0.9rem;
+    color:hsl(214, 17%, 51%);
+    font-weight: 500;
+}
+.profile-name{
+    color: hsl(217, 19%, 35%);
+    font-weight: 700;
+    margin-block: 0;
+}
+.profile-details p{
+    color: hsl(214, 17%, 51%);
+    margin-top: 0;
+}
+.social-media img{
+    width: 1.5rem;
+}
+.profile-container img{
+    width: 3rem;
+    border-radius: 50%;
+}
+.social-media-icons-container{
+    background-color: hsl(217, 19%, 35%);
+    /* display: none; */
+    display: flex;
+    justify-content: space-around;
+    padding: 0.7rem;
+    width: 50%;
+    border-radius: 10px;
+}
+.share-text p{
+    color: hsl(214, 17%, 51%);
+    margin-block: 0;
+}
+.share-icon-container{
+    width: 2rem;
+    height: 2rem;
+    background-color: hsl(217, 19%, 35%);
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+    align-self: center;
+}
+
+/* layout 
+===============================================
+*/
+main{
+    display: grid;
+    place-items: center;
+    background-color: hsl(210, 46%, 95%);
+    height: 100vh;
+
+}
+.card-container{
+    display: flex;
+    width: 70%;
+
+}
+.image-container img{
+    width: 100%;
+    height:100% ;
+    object-fit: cover;
+    border-radius: 15px 0 0 15px ;
+    
+}
+.main-content-container{
+    width: 80%;
+    padding: 1rem;
+    border-radius:0 15px 15px 0 ;
+    background-color: #fff;
+ 
+}
+.profile-section{
+    display: flex;
+    justify-content: space-between;
+
+}
+.profile-container{
+    display: flex;
+    gap: 1rem;
+}
