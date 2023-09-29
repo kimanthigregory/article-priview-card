@@ -31,14 +31,29 @@ body{
     width: 3rem;
     border-radius: 50%;
 }
+.share-container{
+    display: flex;
+    justify-content: end;
+}
 .social-media-icons-container{
     background-color: hsl(217, 19%, 35%);
+    margin-right: -6.5rem;
     /* display: none; */
     display: flex;
     justify-content: space-around;
     padding: 0.7rem;
     width: 50%;
     border-radius: 10px;
+    position: relative;
+}
+.social-media-icons-container::after{
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid hsl(217, 19%, 35%);
+    border-top: 10px solid transparent;
+    transform: rotate(-90deg);
 }
 .share-text p{
     color: hsl(214, 17%, 51%);
@@ -52,7 +67,9 @@ body{
     display: grid;
     place-content: center;
     align-self: center;
+   
 }
+
 
 /* layout 
 ===============================================
