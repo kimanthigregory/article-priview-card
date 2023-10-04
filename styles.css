@@ -66,6 +66,13 @@ body{
     border-top: 10px solid transparent;
     transform: rotate(-90deg);
 }
+.social-media-icons-container-2{
+    background-color: hsl(217, 19%, 35%);
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+
 .share-text p{
     color: hsl(214, 17%, 51%);
     margin-block: 0;
@@ -115,11 +122,27 @@ main{
 .profile-section{
     display: flex;
     justify-content: space-between;
-
 }
 .profile-container{
     display: flex;
     gap: 1rem;
+}
+.share-animation{
+   
+    display: none;
+}
+.animate-share-icon img{
+    color: #fff;
+}
+.animate-share-icon{
+    width: 2rem;
+    height: 2rem;
+    background-color:hsl(210, 46%, 95%);
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+    align-self: center;
+
 }
 /* responsiveness with media queries */
 @media (max-width:600px ){
@@ -127,6 +150,7 @@ main{
         display: flex;
         flex-direction: column;
         width: 95%;
+        position: relative;
     }
     .image-container img{
         border-radius: 15px 15px 0 0;
@@ -142,7 +166,7 @@ main{
         align-items: center;
     }
     .social-media-icons-container{
-        /* display: none; */
+        visibility: hidden;
 
     }
     .paragraph-container{
@@ -150,7 +174,37 @@ main{
     }
     .profile-section{
         width: 90%;
+        
+
     }
+    .share-animation{
+        position: absolute;
+        bottom:0;
+        right: 0;
+        opacity: 0;
+        animation-name: animation;
+        animation-duration: 1s;
+        animation-fill-mode: both;
+        /* z-index: 2; */
+        display: block;
+        display: flex;
+        gap: 5rem;
+        width: 0;
+        background-color: hsl(217, 19%, 35%);
+        height: 4rem;
+        align-items: center;
+        justify-content: space-around;
+        border-radius:0 0 15px   15px ;
+    }
+    @keyframes animation{
+     
+        100% {width: 100%; opacity: 1; right:0;}
+    }
+    /* @keyframes animation{
+        0%{width: 0; opacity: 0; left: 0;} 
+        100% {width: 100%; opacity: 1; left:0; }
+    } */
+
     .social-media-icons-container{
         background-color: hsl(217, 19%, 35%);
         margin-right: -6.5rem;
@@ -158,14 +212,12 @@ main{
         display: flex;
         justify-content: space-around;
         padding: 0.7rem;
-        width: 300px;
         border-radius: 10px;
         position: absolute;
         animation: none;
         opacity: 1;
         top: 0;
         right:0;
-        margin: 0;
     }
     .social-media-icons-container::after{
         display: none;
