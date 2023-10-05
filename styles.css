@@ -38,13 +38,11 @@ body{
 .social-media-icons-container{
     background-color: hsl(217, 19%, 35%);
     margin-right: -6.5rem;
-    /* visibility: hidden; */
     display: flex;
     justify-content: space-around;
     padding: 0.7rem;
     width: 150px;
     border-radius: 10px;
-    animation-name: animate;
     animation-duration: 1s;
     animation-fill-mode: forwards;
     position: absolute;
@@ -53,6 +51,10 @@ body{
     right: 2rem;
 
 
+}
+.show-pop-up{
+    animation-name: animate;
+    
 }
 @keyframes animate {
     100% {right: 2rem; top: -6rem; opacity: 1; }
