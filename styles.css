@@ -1,5 +1,6 @@
 body{
     font-family: 'Manrope', sans-serif;
+    margin: 0;
 }
 
 /* typography
@@ -35,20 +36,33 @@ body{
     display: flex;
     justify-content: end;
 }
+.share-icon-section{
+    position: relative;
+}
+.share-icon{
+    width: 1rem;
+}
+.icon path{
+    
+    fill: hsl(214, 17%, 51%);
+}
+.change-svg-color{
+    fill: #fff;
+}
 .social-media-icons-container{
     background-color: hsl(217, 19%, 35%);
     margin-right: -6.5rem;
     display: flex;
     justify-content: space-around;
-    padding: 0.7rem;
-    width: 150px;
+    padding: 0.8rem;
+    width: 200px;
     border-radius: 10px;
     animation-duration: 1s;
     animation-fill-mode: forwards;
     position: absolute;
     opacity: 0;
     top: -3rem;
-    right: 2rem;
+    right: 0.5rem;
 
 
 }
@@ -56,20 +70,27 @@ body{
     animation-name: animate;
     
 }
+.remove-pop-up{
+    animation-name: remove-animation;
+}
 @keyframes animate {
-    100% {right: 2rem; top: -6rem; opacity: 1; }
+    100% {right: 0.5rem; top: -5rem; opacity: 1; }
+}
+@keyframes remove-animation {
+    0%{right: 0.5rem; top: -5rem; opacity: 1;}    
+    100%{right: 0.5rem; top: -3.5rem; opacity: 0;}
 }
 .social-media-icons-container::after{
     content: "";
     position: absolute;
-    bottom: -15px;
+    bottom: -14px;
     border-bottom: 10px solid transparent;
     border-right: 10px solid hsl(217, 19%, 35%);
     border-top: 10px solid transparent;
     transform: rotate(-90deg);
 }
 .social-media-icons-container-2{
-    background-color: hsl(217, 19%, 35%);
+    /* background-color: hsl(217, 19%, 35%); */
     display: flex;
     justify-content: space-between;
     width: 50%;
@@ -87,9 +108,9 @@ body{
     display: grid;
     place-content: center;
     align-self: center;
-    position: relative;
-   
+    
 }
+
 
 
 /* layout 
@@ -100,6 +121,7 @@ main{
     place-items: center;
     background-color: hsl(210, 46%, 95%);
     height: 100vh;
+    width: 100%;
 
 }
 .card-container{
@@ -133,13 +155,14 @@ main{
    
     display: none;
 }
-.animate-share-icon img{
-    color: #fff;
+.share-icon-container-sm{
+    display: none;
 }
+
 .animate-share-icon{
     width: 2rem;
     height: 2rem;
-    background-color:hsl(210, 46%, 95%);
+    background-color:hsl(214, 17%, 51%);
     border-radius: 50%;
     display: grid;
     place-content: center;
@@ -148,6 +171,9 @@ main{
 }
 /* responsiveness with media queries */
 @media (max-width:600px ){
+    main{
+        height: 120vh; 
+    }
     .card-container{
         display: flex;
         flex-direction: column;
@@ -171,6 +197,7 @@ main{
         visibility: hidden;
 
     }
+    
     .paragraph-container{
         width: 90%;
     }
@@ -179,16 +206,26 @@ main{
         
 
     }
+   
+    .share-icon-container-bg{
+        display: none;
+    }
+    .share-icon-container-sm{
+        display: block;
+        display: grid;
+        place-content: center;
+        align-self: center;
+    
+    }
     .share-animation{
         position: absolute;
         bottom:0;
         right: 0;
         opacity: 0;
-        animation-name: animation;
         animation-duration: 1s;
         animation-fill-mode: both;
-        /* z-index: 2; */
-        display: block;
+        z-index: 2;
+        visibility: hidden;
         display: flex;
         gap: 5rem;
         width: 0;
@@ -198,14 +235,22 @@ main{
         justify-content: space-around;
         border-radius:0 0 15px   15px ;
     }
-    @keyframes animation{
+    @keyframes slide-animation{
      
-        100% {width: 100%; opacity: 1; right:0;}
+        100% {width: 100%; opacity: 1; right:0; }
     }
-    /* @keyframes animation{
-        0%{width: 0; opacity: 0; left: 0;} 
-        100% {width: 100%; opacity: 1; left:0; }
-    } */
+    .show-slide-animation{
+        animation-name: slide-animation;
+        visibility: visible;
+    }
+    .remove-slide-animation{
+        animation-name: animation;
+        
+    }
+    @keyframes animation{
+        0%{width: 100%; opacity: 1; right: 0;} 
+        100% {width: 0; opacity: 0; right:0;visibility: hidden;}
+    }
 
     .social-media-icons-container{
         background-color: hsl(217, 19%, 35%);
